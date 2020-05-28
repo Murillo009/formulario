@@ -1,0 +1,54 @@
+
+body{ background: radial-gradient(Gainsboro, Aliceblue);
+}
+
+label { color:darkblue;
+    font-weight: lighter;
+}
+
+.termo { color:darkblue;
+    font-weight: bold;
+}
+
+.btn {
+    
+    text-align: center;
+    border: none;
+    color: white;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 400ms ease;
+    background-color: navy;
+}
+
+
+input[type="text"]{
+    
+   background: Azure;
+    font-family: lucida sans;
+    border-radius: none;
+    width: 500px;
+    height: inherit;
+}
+
+*{
+    margin: 10px;
+}
+
+.topo {
+        margin: 20px;
+    
+}
+
+input[type="email"]{
+    
+   background: Azure;
+    font-family: lucida sans;
+    border-radius: none;
+    width: 500px;
+    height: inherit;
+}

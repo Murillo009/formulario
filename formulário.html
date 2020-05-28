@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Formulario</title>
+    
+<meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap core CSS -->
+      
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <link rel ="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+<body>
+	
+	<h1><div class="topo">Cadastre-se!</div></h1>
+	<form class="form-horizontal container" id="formulario">
+        <label class="col-md-4 control-label" for="nome">Nome:</label>
+		<div class="col-md-8 input-group">
+            <input type="text" name="nome" class="form-control input-md" id="nome">
+		</div>
+		
+        <label class="col-md-4 control-label" for="email">E-mail: </label>
+		<div class="col-md-8 input-group">
+			<input type="email" name="email" id="email" class="form-control" placeholder= "Murillo@aluno.sajudas.br" >
+		</div>
+		
+        
+        <label for="telefone" class="col-md-4 control-label">Telefone: </label>
+        <div class="col-md-8 input-group">
+			<input type="text" name="telefone" id="telefone" required maxlength="15" class="form-control" placeholder= "(xx) xxxx-xxxx">
+		</div>
+        
+        <label for="data" class="col-md-4 control-label">Data de Nascimento: </label>
+                <div class="col-md-8 input-group">
+			<input type="text" name="data" id="data" required="required"  class="form-control input-md" placeholder= "__/__/____">
+		</div>
+
+		<label class="col-md-4 control-label" for="cpf">CPF: </label>
+        <div class="col-md-8 input-group">
+			<input type="text" name="cpf" id="cpf" required maxlength="11" class="form-control" placeholder= "xxx.xxx.xxx-xx">
+		</div> 
+        
+        <label class="col-md-4 control-label" for="endereço">Endereço: </label>
+                <div class="col-md-8 input-group">
+			<input type="text" name="endereço" id="endereço" class="form-control" required="required">
+		</div>
+        
+            <label class="col-md-4 control-label" for="cep">CEP: </label>
+        <div class="col-md-8 input-group">
+		<input type="text" name="cep" id="cep" required maxlength="8" class="form-control input-md" placeholder= "xxxxx-xxx">
+		</div>
+    
+        <label class="col-md-4 control-label" for="cidade">Cidade: </label>
+            <div class="col-md-8 input-group">
+			<input type="text" name="cidade" id="cidade" class="form-control" required="cidade">
+		</div>
+
+		<label class="col-md-4 control-label" for="estado">Estado: </label>
+                <div class="col-md-8 input-group">
+			<input type="text" name="estado" id="estado" class="form-control" required="required">
+		</div>
+        
+            <br><br><div>
+            <input type="checkbox" name="termo" id="termo">
+                <label for="termo" class="termo">Eu aceito os termos</label>
+		</div>
+                
+		
+        <br><div>
+			<input type="submit" class="btn efeito1" value="Cadastrar">
+		</div>
+        
+        
+	</form>
+	
+	<!-- Incluir o jQuery -->
+	<script 
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+	</script>
+	
+	<!-- Incluindo o plugin validate (jQuery) -->
+	<script 
+		src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js">
+	</script>
+	
+
+	
+	<!-- Trabalhando com nosso próprio script -->
+	<script type="text/javascript">
+		$("#formulario").validate({
+			rules : {
+				nome : {
+					required: true, 
+					minlength: 3
+				},
+				email : {
+					required: true
+				}
+			},
+			messages : {
+				nome : {
+					required: "Por favor, informe o nome!",
+					minlength: "Insira no campo nome, pelo menos 3 caracteres!"
+				}, 
+				email : {
+					required: "Por favor, preencha o campo e-mail!",
+					email: "Informe um e-mail válido: leonardo@aluno.saojudas.br"
+				},
+                
+                telefone : {
+                    required: "Por favor, informe um número de telefone válido!",
+				},
+                
+                cpf : {
+					required: "Por favor, informe um número de CPF válido!",
+				},
+                
+                data : {
+					required: "Por favor, preencha o campo!",
+				},
+                
+                endereço : {
+					required: "Por favor, preencha o campo!",
+				},
+                
+                cep : {
+					required: "Por favor, preencha o campo!",
+				},
+                
+                estado : {
+					required: "Por favor, preencha o campo!",
+				},
+                
+                cidade : {
+					required: "Por favor, preencha o campo!",
+				},
+                
+			},
+
+		});
+        
+	</script>
+    
+    
+        <!-- incluindo o jquery mask -->
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js">
+        
+    </script>
+	
+           <!-- Mask data -->
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('#data').mask('00/00/0000')
+    });
+    
+    </script>
+    
+            <!-- Mask cep -->
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('#cep').mask('000.000.000-00', {reverse: true})
+    });
+    
+    </script>
+   
+    
+                <!-- Mask cpf -->
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+       $('#cpf').mask('000.000.000-00', {reverse: true})
+    });
+    
+    </script>
+    
+    
+        <!-- Mask telefone -->
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+      $('#telefone').mask('(00) 0000-0000')
+    });
+    
+    </script>
+    
+    
+    
+	<style type="text/css">
+		.error {
+			color: red;
+		}
+	</style>
+</body>
+</html>
